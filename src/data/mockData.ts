@@ -1,9 +1,10 @@
-import { User, Shop, Product, ProductImage, DeliveryLink, ProductWithDetails } from '@/types';
+import { User, Shop, Product, ProductImage, DeliveryLink, ProductWithDetails, AdminRequest } from '@/types';
 
 export const mockUsers: User[] = [
   { id: '1', email: 'superadmin@hungers.com', role: 'superadmin', createdAt: new Date().toISOString() },
   { id: '2', email: 'admin@warungbusiti.com', role: 'admin', createdAt: new Date().toISOString() },
   { id: '3', email: 'admin@cendoldawet.com', role: 'admin', createdAt: new Date().toISOString() },
+  { id: '4', email: 'user@example.com', role: 'user', address: 'Jakarta Selatan', createdAt: new Date().toISOString() },
 ];
 
 export const mockShops: Shop[] = [
@@ -99,6 +100,20 @@ export const mockDeliveryLinks: DeliveryLink[] = [
   { id: 'del5', productId: 'prod5', gofoodUrl: 'https://gofood.co.id', grabfoodUrl: 'https://grab.com/food' },
 ];
 
+export const mockAdminRequests: AdminRequest[] = [
+  {
+    id: 'req1',
+    userId: '4',
+    userEmail: 'user@example.com',
+    shopName: 'Warung Makan Sederhana',
+    locationLat: -6.2200,
+    locationLng: 106.8600,
+    manualLocationUrl: 'https://maps.google.com/?q=-6.2200,106.8600',
+    status: 'pending',
+    createdAt: new Date().toISOString(),
+  },
+];
+
 export function getProductsWithDetails(): ProductWithDetails[] {
   return mockProducts.map((product) => {
     const shop = mockShops.find((s) => s.id === product.shopId)!;
@@ -115,4 +130,19 @@ export function getProductsWithDetails(): ProductWithDetails[] {
       deliveryLinks,
     };
   });
+}
+
+// Helper to get admin with shop details
+export function getAdminsWithShops() {
+  return mockUsers
+    .filter((u) => u.role === 'admin')
+    .map((admin) => {
+      const shop = mockShops.find((s) => s.ownerId === admin.id);
+      const products = shop ? mockProducts.filter((p) => p.shopId === shop.id) : [];
+      return {
+        ...admin,
+        shop,
+        products,
+      };
+    });
 }
