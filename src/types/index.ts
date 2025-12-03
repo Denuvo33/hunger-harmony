@@ -4,10 +4,13 @@ export type WeatherSuitability = 'panas' | 'dingin' | 'sejuk' | 'semua';
 
 export type ProductType = 'makanan' | 'minuman';
 
+export type AdminRequestStatus = 'pending' | 'approved' | 'rejected';
+
 export interface User {
   id: string;
   email: string;
   role: UserRole;
+  address?: string;
   createdAt: string;
 }
 
@@ -63,4 +66,16 @@ export interface WeatherData {
 export interface Province {
   id: string;
   name: string;
+}
+
+export interface AdminRequest {
+  id: string;
+  userId: string;
+  userEmail: string;
+  shopName: string;
+  locationLat: number;
+  locationLng: number;
+  manualLocationUrl?: string;
+  status: AdminRequestStatus;
+  createdAt: string;
 }

@@ -36,7 +36,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const isOpen = isShopOpen(shop.openTime, shop.closeTime);
 
   return (
-    <Card className="glass-card p-4 space-y-4 animate-fade-in">
+    <Card className="glass-card p-4 space-y-4 card-hover">
       {/* Shop Header */}
       <div className="flex items-start justify-between">
         <div>
