@@ -1,73 +1,126 @@
-# Welcome to your Lovable project
+🍽️ Hunger’s Harmony
+AI-Based Food Recommendation for UMKM | Mood + Weather + Smart Menu Matching
+Hunger’s Harmony adalah platform cerdas yang membantu UMKM kuliner memberikan rekomendasi makanan terbaik kepada pelanggan berdasarkan cuaca real-time, mood pengguna, dan data menu toko.
 
-## Project info
+Pengguna cukup memilih mood atau melihat kondisi cuaca, lalu AI akan menampilkan makanan yang paling sesuai dari menu UMKM terdekat.
 
-**URL**: https://lovable.dev/projects/9ea71851-0614-47b5-a93f-c566e2597566
+🚀 Fitur Utama
+🔥 1. Rekomendasi Berdasarkan Cuaca (Real-Time Weather AI)
+Mengambil data cuaca terkini dari OpenWeatherMap
 
-## How can I edit this code?
+AI memberikan rekomendasi seperti:
 
-There are several ways of editing your application.
+Hujan → makanan hangat (soto, bakso)
 
-**Use Lovable**
+Panas → makanan segar (es buah, salad)
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/9ea71851-0614-47b5-a93f-c566e2597566) and start prompting.
+😊 2. Rekomendasi Berdasarkan Mood
+User cukup memilih mood senang, sedih, lelah, marah, dll.
+AI akan mencocokkan mood dengan kategori makanan yang paling relevan.
 
-Changes made via Lovable will be committed automatically to this repo.
+🏪 3. Data Menu UMKM
+UMKM hanya perlu:
 
-**Use your preferred IDE**
+Menambahkan nama toko + daftar makanan
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Upload gambar makanan
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Menentukan harga + deskripsi
 
-Follow these steps:
+AI akan mencocokkannya dengan preferensi user.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+🧭 4. Maps Integration
+Google Maps API atau Leaflet OpenStreetMap (gratis tanpa API Key)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Menampilkan lokasi toko
 
-# Step 3: Install the necessary dependencies.
-npm i
+Navigasi rute otomatis → langsung buka Google Maps
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+🤖 5. AI Food Recommendation Engine
+Menggunakan:
+
+OpenAI / Groq API
+
+Model LLM → menghasilkan rekomendasi personal dan natural
+
+Contoh respons AI:
+
+“Karena cuaca sedang hujan, makanan hangat cocok. Dari menu toko Anda, Bakso Kuah menjadi pilihan terbaik.”
+
+🎨 6. UI Modern & Ringan
+React + TypeScript
+
+ShadCN UI
+
+Lucide Icons
+
+Responsif mobile
+
+🧩 Teknologi yang Digunakan
+Teknologi	Fungsi
+React + TypeScript	Frontend inti
+ShadCN UI	Komponen modern
+Lucide Icons	Icon pack
+OpenWeatherMap API	Cuaca real-time
+Google Maps API / Leaflet	Lokasi & rute
+OpenAI / Groq API	AI rekomendasi
+Vite / Next.js (opsional)	Dev & build
+🔑 Konfigurasi API (API_CONFIG)
+Edit API_CONFIG.ts:
+
+export const API_CONFIG = {
+  WEATHER_API_KEY: "", 
+  WEATHER_API_URL: "https://api.openweathermap.org/data/2.5/weather",
+
+  MAPS_API_KEY: "", // jika kosong → pakai OpenStreetMap
+
+  AI_API_KEY: "",
+  AI_API_URL: "https://api.openai.com/v1/chat/completions",
+  AI_MODEL: "gpt-4o-mini",
+};
+📌 Cara Menjalankan Proyek
+git clone <repo-url>
+cd hungers-harmony
+npm install
 npm run dev
-```
+Buka di browser:
 
-**Edit a file directly in GitHub**
+http://localhost:5173/
+📂 Struktur Folder
+src/
+ ├── components/
+ │    ├── RecommendationFilters.tsx
+ │    ├── Weather.tsx
+ │    ├── RestaurantCard.tsx
+ │    └── ...
+ ├── pages/
+ ├── utils/
+ │    ├── api.ts
+ │    └── AI.ts
+ ├── config/
+ │    └── API_CONFIG.ts
+ └── assets/
+🎯 Target Pengguna
+Untuk UMKM:
+Membantu meningkatkan penjualan berdasarkan rekomendasi pintar
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Memberikan pengalaman seperti aplikasi besar (GoFood/GrabFood)
 
-**Use GitHub Codespaces**
+Untuk Pengguna:
+Tidak bingung mau makan apa
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Rekomendasi personal dan cepat
 
-## What technologies are used for this project?
+📈 Manfaat Proyek
+Menghubungkan preferensi user + kondisi lingkungan + menu UMKM
 
-This project is built with:
+Membuat rekomendasi terasa lebih personal dan manusiawi
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Memberi pengalaman premium meskipun berbasis web sederhana
 
-## How can I deploy this project?
+🤝 Kontribusi
+Pull Request selalu diterima!
+Silakan buka issue jika ingin menambahkan fitur baru.
 
-Simply open [Lovable](https://lovable.dev/projects/9ea71851-0614-47b5-a93f-c566e2597566) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+📝 Lisensi
+MIT License — bebas dipakai untuk pengembangan UMKM & edukasi.
