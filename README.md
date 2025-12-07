@@ -122,5 +122,11 @@ Memberi pengalaman premium meskipun berbasis web sederhana
 Pull Request selalu diterima!
 Silakan buka issue jika ingin menambahkan fitur baru.
 
+## 🎥 Demo Video Aplikasi
+
+Klik gambar di bawah untuk menonton video demo aplikasi Hunger Harmony:
+
+[![Demo Video](https://via.placeholder.com/800x450.png?text=Klik+Untuk+Menonton+Video+Demo)](https://drive.google.com/file/d/1xwYqFV3M09iyHgE_m6skEBWgGo-d3v7C/view?usp=sharing)
+
 📝 Lisensi
 MIT License — bebas dipakai untuk pengembangan UMKM & edukasi.
